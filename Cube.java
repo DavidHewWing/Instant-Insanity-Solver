@@ -57,6 +57,7 @@ public class Cube{
 		this.back = tempRight;
 		this.left = tempBack;
 
+
 	}
 
 
