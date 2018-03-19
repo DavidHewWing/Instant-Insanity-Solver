@@ -67,10 +67,10 @@ public class Cube{
 		Color tempRight = this.right;
 		Color tempLeft = this.left;
 
-		this.right = tempDown;
-		this.down = tempLeft;
-		this.up = tempRight;
-		this.left = tempUp;
+		this.right = tempUp;
+		this.down = tempRight
+		this.up = tempLeft;
+		this.left = tempDown;
 	}
 
 	public void LeftRoll(){
@@ -80,10 +80,10 @@ public class Cube{
 		Color tempRight = this.right;
 		Color tempLeft = this.left;
 
-		this.right = tempUp;
-		this.down = tempRight;
-		this.up = tempLeft;
-		this.left = tempDown;
+		this.right = tempDown;
+		this.down = tempLeft;
+		this.up = tempRight;
+		this.left = tempUp;
 	}
 
 }
