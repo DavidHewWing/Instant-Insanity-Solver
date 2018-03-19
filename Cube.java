@@ -45,7 +45,6 @@ public class Cube{
 		return "[" + this.up + ", " + this.front + ", " + this.right + ", "+ this.back + ", "+ this.left + ", "+ this.down + "]";
 	}
 
-
 	public void Rotate(){
 
 		Color tempFront = this.front;
@@ -61,5 +60,30 @@ public class Cube{
 	}
 
 
+	public void RightRoll(){
+		
+		Color tempUp = this.up;
+		Color tempDown = this.down;
+		Color tempRight = this.right;
+		Color tempLeft = this.left;
+
+		this.right = tempDown;
+		this.down = tempLeft;
+		this.up = tempRight;
+		this.left = tempUp;
+	}
+
+	public void LeftRoll(){
+
+		Color tempUp = this.up;
+		Color tempDown = this.down;
+		Color tempRight = this.right;
+		Color tempLeft = this.left;
+
+		this.right = tempUp;
+		this.down = tempRight;
+		this.up = tempLeft;
+		this.left = tempDown;
+	}
 
 }
