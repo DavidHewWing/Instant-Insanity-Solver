@@ -44,4 +44,22 @@ public class Cube{
 	public String toString(){
 		return "[" + this.up + ", " + this.front + ", " + this.right + ", "+ this.back + ", "+ this.left + ", "+ this.down + "]";
 	}
+
+
+	public void Rotate(){
+
+		Color tempFront = this.front;
+		Color tempRight = this.right;
+		Color tempBack = this.back;
+		Color tempLeft = this.left;
+
+		this.front = tempLeft;
+		this.right = tempFront;
+		this.back = tempRight;
+		this.left = tempBack;
+
+	}
+
+
+
 }
