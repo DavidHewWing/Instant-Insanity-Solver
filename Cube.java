@@ -8,6 +8,7 @@ public class Cube{
 	private Color down; //index 5
 	private Color[] initColors = new Color[6]; //holds the initial colors of the faces.
 	private Cube[] orientations = new Cube[24]; //hold all the values for the orientations;
+	private int counter = 0; //used in method next to determine the next state
 
 
 	public Cube(Color[] faces){
@@ -103,6 +104,7 @@ public class Cube{
 
 	public void reset(){
 		identity();
+		counter = 0;
 		for(int i = 0; i < orientations.length; i++){
 			orientations[i] = null;
 		}
@@ -118,9 +120,63 @@ public class Cube{
 				Rotate, Rotate, LeftRoll, Rotate, Rotate, Rotate, RightRoll, Rotate, Rotate, Rotate.
  */
 	public void next(){
-		/* if(){
-			;
-		} */
+		
+		counter++;
+
+		//cases for identity
+
+		if (counter == 1){
+
+			this.identity();
+			orientations[counter-1] = new Cube(new Color[] {up, front, right, back, left, down});
+
+		}
+
+		//cases for rightRoll
+
+		else if (counter == 5 || counter == 9 || counter == 21  ){
+
+			this.rightRoll();
+			orientations[counter-1] = new Cube(new Color[] {up, front, right, back, left, down});
+
+		}
+
+		//cases for leftRoll
+
+		else if (counter == 13 || counter == 17){
+
+
+			this.leftRoll();
+			orientations[counter-1] = new Cube(new Color[] {up, front, right, back, left, down});
+		}
+
+		//cases for rotate
+
+		else if (counter<=24) {
+
+			this.rotate();
+			orientations[counter-1] = new Cube(new Color[] {up, front, right, back, left, down});
+
+		}
+
+		else {
+			//throw exception
+		}
+
+
+
+	}
+
+
+	public boolean hasNext(){
+
+		if(counter>24){
+
+			return false;
+		}
+
+		return true;
+
 	}
 
 }
