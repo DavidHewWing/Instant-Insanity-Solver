@@ -6,6 +6,8 @@ public class Cube{
 	private Color back; //index 3
 	private Color left; //index 4
 	private Color down; //index 5
+	private Color[] initColors = new Color[6];
+
 
 
 	public Cube(Color[] faces){
@@ -15,6 +17,9 @@ public class Cube{
 		back = faces[3];
 		left = faces[4];
 		down = faces[5];
+		for(int i = 0; i < 6; i++){
+			intiColors[i] = faces[i];
+		}
 	}
 
 	public Color getUp(){
@@ -85,6 +90,17 @@ public class Cube{
 		this.down = tempLeft;
 		this.up = tempRight;
 		this.left = tempUp;
+	}
+
+	public void Identity(){
+
+		this.up = initFaces[0];
+		this.front = initFaces[1];
+		this.right = initFaces[2];
+		this.back = initFaces[3];
+		this.left = initFaces[4];
+		this.down = initFaces[5];
+
 	}
 
 }
