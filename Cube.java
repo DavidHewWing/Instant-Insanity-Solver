@@ -120,6 +120,8 @@ public class Cube{
 				Rotate, Rotate, LeftRoll, Rotate, Rotate, Rotate, RightRoll, Rotate, Rotate, Rotate.
  */
 	public void next(){
+
+		//should be in a try-catch block?
 		
 		counter++;
 
@@ -159,10 +161,6 @@ public class Cube{
 
 		}
 
-		else {
-			//throw exception
-		}
-
 
 
 	}
@@ -170,12 +168,12 @@ public class Cube{
 
 	public boolean hasNext(){
 
-		if(counter>24){
+		if(0<counter<=24){
 
-			return false;
+			return true;
 		}
 
-		return true;
+		return false;
 
 	}
 
