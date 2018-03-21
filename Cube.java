@@ -18,7 +18,7 @@ public class Cube{
 		left = faces[4];
 		down = faces[5];
 		for(int i = 0; i < faces.length; i++){
-			intiColors[i] = faces[i];
+			initColors[i] = faces[i];
 		}
 	}
 
@@ -72,7 +72,7 @@ public class Cube{
 		Color tempLeft = this.left;
 
 		this.right = tempUp;
-		this.down = tempRight
+		this.down = tempRight;
 		this.up = tempLeft;
 		this.left = tempDown;
 	}
@@ -92,12 +92,12 @@ public class Cube{
 
 	public void identity(){
 
-		this.up = initFaces[0];
-		this.front = initFaces[1];
-		this.right = initFaces[2];
-		this.back = initFaces[3];
-		this.left = initFaces[4];
-		this.down = initFaces[5];
+		this.up = initColors[0];
+		this.front = initColors[1];
+		this.right = initColors[2];
+		this.back = initColors[3];
+		this.left = initColors[4];
+		this.down = initColors[5];
 
 	}
 
@@ -112,8 +112,15 @@ public class Cube{
 	//Rotate, Rotate, LeftRoll, Rotate, Rotate, Rotate, RightRoll, Rotate, Rotate, Rotate
 	
 	//how to keep track of what orientation you are at in the sequence?
+
+	/* Following a call to the method reset, each call to the method next changes the orientation of the cube according to the following list of operations:
+			====> Identity, Rotate, Rotate, Rotate, RightRoll, Rotate, Rotate, Rotate, RightRoll, Rotate, Rotate, Rotate, LeftRoll, Rotate,
+				Rotate, Rotate, LeftRoll, Rotate, Rotate, Rotate, RightRoll, Rotate, Rotate, Rotate.
+ */
 	public void next(){
-		if()
+		/* if(){
+			;
+		} */
 	}
 
 }
