@@ -119,7 +119,7 @@ public class Cube{
 			====> Identity, Rotate, Rotate, Rotate, RightRoll, Rotate, Rotate, Rotate, RightRoll, Rotate, Rotate, Rotate, LeftRoll, Rotate,
 				Rotate, Rotate, LeftRoll, Rotate, Rotate, Rotate, RightRoll, Rotate, Rotate, Rotate.
  */
-	public void next(){
+	public void next() throws IllegalStateExpection{
 
 		//should be in a try-catch block?
 		
@@ -158,6 +158,20 @@ public class Cube{
 
 			this.rotate();
 			orientations[counter-1] = new Cube(new Color[] {up, front, right, back, left, down});
+
+		}
+
+
+		try{
+
+			for (i=0; i<counter; i++){
+
+				if (orientations[counter]
+
+
+			}
+
+
 
 		}
 
