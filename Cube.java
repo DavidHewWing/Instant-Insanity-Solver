@@ -185,20 +185,6 @@ public class Cube{
 		}
 
 
-		try{
-
-			for (i=0; i<counter; i++){
-
-				if (orientations[counter]
-
-
-			}
-
-
-
-		}
-
-
 
 	}
 
