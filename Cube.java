@@ -125,7 +125,7 @@ public class Cube{
 		
 		counter++;
 
-		//cases for identity
+		
 
 		if (counter == 1){
 
@@ -175,6 +175,14 @@ public class Cube{
 
 		return false;
 
+	}
+
+	private isEquals(Cube other){
+		if(this.up == other.up && this.front == other.front && this.right == other.right && this.back == other.back && this.left == other.left && this.down == other.down){
+			return true;
+		}else{
+			return false
+		}
 	}
 
 }
