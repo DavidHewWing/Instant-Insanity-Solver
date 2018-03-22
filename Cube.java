@@ -130,7 +130,13 @@ public class Cube{
 		if (counter == 1){
 
 			this.identity();
-			orientations[counter-1] = new Cube(new Color[] {up, front, right, back, left, down});
+			Cube tempCube = new Cube(new Color[] {up, front, right, back, left, down});
+			orientations[counter-1] = tempCube;
+			for(int i = 0; i < counter; i++){
+				if(tempCube.isEquals(orientations[i])){
+					throw new IllegalStateException();
+				}
+			}
 
 		}
 
@@ -139,7 +145,13 @@ public class Cube{
 		else if (counter == 5 || counter == 9 || counter == 21  ){
 
 			this.rightRoll();
-			orientations[counter-1] = new Cube(new Color[] {up, front, right, back, left, down});
+			Cube tempCube = new Cube(new Color[] {up, front, right, back, left, down});
+			orientations[counter-1] = tempCube;
+			for(int i = 0; i < counter; i++){
+				if(tempCube.isEquals(orientations[i])){
+					throw new IllegalStateException();
+				}
+			}
 
 		}
 
@@ -147,9 +159,14 @@ public class Cube{
 
 		else if (counter == 13 || counter == 17){
 
-
 			this.leftRoll();
-			orientations[counter-1] = new Cube(new Color[] {up, front, right, back, left, down});
+			Cube tempCube = new Cube(new Color[] {up, front, right, back, left, down});
+			orientations[counter-1] = tempCube;
+			for(int i = 0; i < counter; i++){
+				if(tempCube.isEquals(orientations[i])){
+					throw new IllegalStateException();
+				}
+			}
 		}
 
 		//cases for rotate
@@ -157,7 +174,13 @@ public class Cube{
 		else if (counter<=24) {
 
 			this.rotate();
-			orientations[counter-1] = new Cube(new Color[] {up, front, right, back, left, down});
+			Cube tempCube = new Cube(new Color[] {up, front, right, back, left, down});
+			orientations[counter-1] = tempCube;
+			for(int i = 0; i < counter; i++){
+				if(tempCube.isEquals(orientations[i])){
+					throw new IllegalStateException();
+				}
+			}
 
 		}
 
@@ -168,7 +191,7 @@ public class Cube{
 
 	public boolean hasNext(){
 
-		if(0<counter<=24){
+		if(counter<=24 && counter > 0){
 
 			return true;
 		}
@@ -177,11 +200,11 @@ public class Cube{
 
 	}
 
-	private isEquals(Cube other){
+	private boolean isEquals(Cube other){
 		if(this.up == other.up && this.front == other.front && this.right == other.right && this.back == other.back && this.left == other.left && this.down == other.down){
 			return true;
 		}else{
-			return false
+			return false;
 		}
 	}
 
