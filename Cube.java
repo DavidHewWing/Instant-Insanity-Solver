@@ -215,6 +215,8 @@ public class Cube{
 		}else{
 			return false;
 		}
+
+		System.out.println("Test");
 	}
 
 }
