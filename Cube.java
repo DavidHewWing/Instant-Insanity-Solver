@@ -132,12 +132,16 @@ public class Cube{
 			this.identity();
 			Cube tempCube = new Cube(new Color[] {up, front, right, back, left, down});
 			orientations[counter-1] = tempCube;
+<<<<<<< HEAD
 			for(int i = 0; i < counter; i++){
 				if(tempCube.isEquals(orientations[i])){
 					System.out.println("exception");
 					throw new IllegalStateException();
 				}
 			}
+=======
+			System.out.print(" ---------------- COUNTER IS AT " + counter);
+>>>>>>> 500e0489111b18950e2eba7d00f5721b5131fbd9
 
 		}
 
@@ -148,12 +152,16 @@ public class Cube{
 			this.rightRoll();
 			Cube tempCube = new Cube(new Color[] {up, front, right, back, left, down});
 			orientations[counter-1] = tempCube;
+<<<<<<< HEAD
 			for(int i = 0; i < counter; i++){
 				if(tempCube.isEquals(orientations[i])){
 					System.out.println("exception");
 					throw new IllegalStateException();
 				}
 			}
+=======
+			System.out.print(" ---------------- COUNTER IS AT " + counter);
+>>>>>>> 500e0489111b18950e2eba7d00f5721b5131fbd9
 
 		}
 
@@ -164,12 +172,17 @@ public class Cube{
 			this.leftRoll();
 			Cube tempCube = new Cube(new Color[] {up, front, right, back, left, down});
 			orientations[counter-1] = tempCube;
+<<<<<<< HEAD
 			for(int i = 0; i < counter; i++){
 				if(tempCube.isEquals(orientations[i])){
 					System.out.println("exception");
 					throw new IllegalStateException();
 				}
 			}
+=======
+			System.out.print(" ---------------- COUNTER IS AT " + counter);
+	
+>>>>>>> 500e0489111b18950e2eba7d00f5721b5131fbd9
 		}
 
 		//cases for rotate
@@ -179,6 +192,7 @@ public class Cube{
 			this.rotate();
 			Cube tempCube = new Cube(new Color[] {up, front, right, back, left, down});
 			orientations[counter-1] = tempCube;
+<<<<<<< HEAD
 			for(int i = 0; i < counter; i++){
 				if(tempCube.isEquals(orientations[i])){
 					System.out.println("exception");
@@ -186,6 +200,9 @@ public class Cube{
 				}
 			}
 
+=======
+			System.out.print(" ---------------- COUNTER IS AT " + counter);
+>>>>>>> 500e0489111b18950e2eba7d00f5721b5131fbd9
 		}
 
 
@@ -195,7 +212,7 @@ public class Cube{
 
 	public boolean hasNext(){
 
-		if(counter<=24 && counter > 0){
+		if(counter<=24 && counter>=0){
 
 			//next();
 
