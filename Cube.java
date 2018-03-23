@@ -7,7 +7,7 @@ public class Cube{
 	private Color left; //index 4
 	private Color down; //index 5
 	private Color[] initColors = new Color[6]; //holds the initial colors of the faces.
-	private Cube[] orientations = new Cube[24]; //hold all the values for the orientations;
+	private Cube[] orientations = new Cube[25]; //hold all the values for the orientations;
 	private int counter = 0; //used in method next to determine the next state
 
 
@@ -119,7 +119,7 @@ public class Cube{
 			====> Identity, Rotate, Rotate, Rotate, RightRoll, Rotate, Rotate, Rotate, RightRoll, Rotate, Rotate, Rotate, LeftRoll, Rotate,
 				Rotate, Rotate, LeftRoll, Rotate, Rotate, Rotate, RightRoll, Rotate, Rotate, Rotate.
  */
-	public void next() throws IllegalStateException{
+	public void next(){
 
 		//should be in a try-catch block?
 		
@@ -131,15 +131,14 @@ public class Cube{
 
 			this.identity();
 			Cube tempCube = new Cube(new Color[] {up, front, right, back, left, down});
-			orientations[counter-1] = tempCube;
-			for(int i = 0; i < counter; i++){
+			orientations[counter] = tempCube;
+			for(int i = 1; i < counter; i++){
 				if(tempCube.isEquals(orientations[i])){
-					System.out.println("exception");
 					throw new IllegalStateException();
 				}
 			}
-
-			System.out.print(" ---------------- COUNTER IS AT " + counter);
+			
+			System.out.print(counter + " ----- " + orientations[counter]);
 
 		}
 
@@ -149,15 +148,13 @@ public class Cube{
 
 			this.rightRoll();
 			Cube tempCube = new Cube(new Color[] {up, front, right, back, left, down});
-			orientations[counter-1] = tempCube;
-			for(int i = 0; i < counter; i++){
+			orientations[counter] = tempCube;
+			System.out.print(counter + " ----- " + orientations[counter]);
+			for(int i = 1; i < counter; i++){
 				if(tempCube.isEquals(orientations[i])){
-					System.out.println("exception");
 					throw new IllegalStateException();
 				}
 			}
-
-			System.out.print(" ---------------- COUNTER IS AT " + counter);
 
 		}
 
@@ -167,16 +164,14 @@ public class Cube{
 
 			this.leftRoll();
 			Cube tempCube = new Cube(new Color[] {up, front, right, back, left, down});
-			orientations[counter-1] = tempCube;
-
-			for(int i = 0; i < counter; i++){
+			orientations[counter] = tempCube;
+			for(int i = 1; i < counter; i++){
 				if(tempCube.isEquals(orientations[i])){
-					System.out.println("exception");
 					throw new IllegalStateException();
 				}
 			}
 
-			System.out.print(" ---------------- COUNTER IS AT " + counter);
+			System.out.print(counter + " ----- " + orientations[counter]);
 	
 		}
 
@@ -186,14 +181,13 @@ public class Cube{
 
 			this.rotate();
 			Cube tempCube = new Cube(new Color[] {up, front, right, back, left, down});
-			orientations[counter-1] = tempCube;
-			for(int i = 0; i < counter; i++){
+			orientations[counter] = tempCube;
+			for(int i = 1; i < counter; i++){
 				if(tempCube.isEquals(orientations[i])){
-					System.out.println("exception");
 					throw new IllegalStateException();
 				}
 			}
-			System.out.print(" ---------------- COUNTER IS AT " + counter);
+			System.out.print(counter + " ----- " + orientations[counter]);
 		}
 
 

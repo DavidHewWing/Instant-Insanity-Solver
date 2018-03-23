@@ -9,7 +9,7 @@ public class Test{
 		c.reset();
 
 		while (c.hasNext()){
-
+			
 			c.next();
 			System.out.println(c);
 
@@ -19,6 +19,7 @@ public class Test{
 
 		System.out.println("reset:");
 		c.reset();
+		
 		while(c.hasNext()){
 
 			c.next();
