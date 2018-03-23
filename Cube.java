@@ -119,7 +119,7 @@ public class Cube{
 			====> Identity, Rotate, Rotate, Rotate, RightRoll, Rotate, Rotate, Rotate, RightRoll, Rotate, Rotate, Rotate, LeftRoll, Rotate,
 				Rotate, Rotate, LeftRoll, Rotate, Rotate, Rotate, RightRoll, Rotate, Rotate, Rotate.
  */
-	public void next() throws IllegalStateExpection{
+	public void next() throws IllegalStateException{
 
 		//should be in a try-catch block?
 		
@@ -134,6 +134,7 @@ public class Cube{
 			orientations[counter-1] = tempCube;
 			for(int i = 0; i < counter; i++){
 				if(tempCube.isEquals(orientations[i])){
+					System.out.println("exception");
 					throw new IllegalStateException();
 				}
 			}
@@ -149,6 +150,7 @@ public class Cube{
 			orientations[counter-1] = tempCube;
 			for(int i = 0; i < counter; i++){
 				if(tempCube.isEquals(orientations[i])){
+					System.out.println("exception");
 					throw new IllegalStateException();
 				}
 			}
@@ -164,6 +166,7 @@ public class Cube{
 			orientations[counter-1] = tempCube;
 			for(int i = 0; i < counter; i++){
 				if(tempCube.isEquals(orientations[i])){
+					System.out.println("exception");
 					throw new IllegalStateException();
 				}
 			}
@@ -178,6 +181,7 @@ public class Cube{
 			orientations[counter-1] = tempCube;
 			for(int i = 0; i < counter; i++){
 				if(tempCube.isEquals(orientations[i])){
+					System.out.println("exception");
 					throw new IllegalStateException();
 				}
 			}
@@ -192,6 +196,9 @@ public class Cube{
 	public boolean hasNext(){
 
 		if(counter<=24 && counter > 0){
+
+			//next();
+
 
 			return true;
 		}
