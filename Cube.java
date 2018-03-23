@@ -210,7 +210,7 @@ public class Cube{
 	}
 
 	private boolean isEquals(Cube other){
-		if(this.up == other.up && this.front == other.front && this.right == other.right && this.back == other.back && this.left == other.left && this.down == other.down){
+		if(this.up == other.getUp() && this.front == other.getFront() && this.right == other.getRight() && this.back == other.getBack() && this.left == other.getLeft() && this.down == other.getDown()){
 			return true;
 		}else{
 			return false;
