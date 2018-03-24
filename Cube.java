@@ -23,6 +23,32 @@ public class Cube{
 		}
 	}
 
+	public Cube (Cube other){
+
+		this.up = other.getUp();
+		this.front = other.getFront();
+		this.right = other.getRight();
+		this.back = other.getBack();
+		this.left = other.getLeft();
+		this.down = other.getDown();
+
+		initColors[0] = this.up;
+		initColors[1] = this.front;
+		initColors[2] = this.right;
+		initColors[3] = this.back;
+		initColors[4] = this.left;
+		initColors[5] = this.down;
+
+
+	}
+
+	public Cube copy(){
+
+		Cube copy = new Cube(new Color[] {up, front, right, back, left, down});
+		return copy;
+
+	}
+
 	public Color getUp(){ //getter for up face
 		return up;
 	}
@@ -144,7 +170,7 @@ public class Cube{
 
 		//cases for rightRoll
 
-		else if (counter == 5 || counter == 9 || counter == 21  ){
+		else if (counter == 5 || counter == 9 || counter == 21){
 
 			this.rightRoll();
 			Cube tempCube = new Cube(new Color[] {up, front, right, back, left, down});
@@ -198,9 +224,6 @@ public class Cube{
 	public boolean hasNext(){
 
 		if(counter<=24 && counter>=0){
-
-			//next();
-
 
 			return true;
 		}
