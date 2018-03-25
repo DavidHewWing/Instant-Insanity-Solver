@@ -1,47 +1,75 @@
-public class LinkedQueue<E> implements Queue<E> {
+public class LinkedQueue<D> implements Queue<D> {
 
     private static class Elem<T> {
-
         private T value;
         private Elem<T> next;
-
-        private Elem( T value, Elem<T> next ) {
+        private Elem(T value, Elem<T> next) {
             this.value = value;
             this.next = next;
         }
     }
 
-    private Elem<E> front;
-    private Elem<E> rear;
+    private Elem<D> front;
+    private Elem<D> rear;
 
-    public E peek() {
-        return front.value;
+    public LinkedQueue(){
+        front = rear = null;
     }
 
-    public void enqueue( E o ) {
-        Elem<E> newElem;
-        newElem = new Elem<E>( o, null );
+    public  boolean isEmpty(){
+       return front == null ;       
+    }
 
-        if ( rear == null ) {
-            front = rear = newElem;
+    public  void enqueue(D newElement){
+
+        if(newElement == null) {
+            throw new NullPointerException("no null object in my queue !");
+        }
+        
+        Elem<D> newElem;
+        newElem = new Elem<D>(newElement,null);
+        if(isEmpty()) {
+            front = newElem;
+            rear = newElem;
         } else {
             rear.next = newElem;
             rear = newElem;
         }
     }
 
-    public E dequeue() {
-        E result = front.value;
-        if ( front != null & front.next == null ) {
+
+    public D dequeue() {
+
+        if(isEmpty()) {
+            throw new IllegalStateException("Dequeue method called on an empty queue");
+        }
+
+        D returnedValue;
+        returnedValue = front.value;
+
+        if(front.next == null) {   
             front = rear = null;
         } else {
             front = front.next;
         }
-        return result;
+        return returnedValue;
     }
 
-    public boolean isEmpty() {
-        return front == null;
-    }
+    public String toString() {
 
+        StringBuffer returnedValue = new StringBuffer("[");
+
+        if(!isEmpty()) {
+            Elem<D> cursor = front;
+            returnedValue.append(cursor.value);
+            while(cursor.next != null) {
+                cursor = cursor.next;
+                returnedValue.append(", "  + cursor.value);
+            }
+        }
+        
+        returnedValue.append("]");
+        return returnedValue.toString();
+        
+    }
 }
