@@ -14,7 +14,7 @@ public Class Solution{
 	public Solution(Solution other, Cubes c) throw IllegalStateException{
 
 		if(other == null){
-			throw new IllegalStateException
+			throw new IllegalStateException;
 		}
 
 	}

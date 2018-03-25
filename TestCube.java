@@ -30,9 +30,24 @@ public class TestCube{
 
 		System.out.println("Testing deep copy");
 
+		Cube c1 = new Cube(c);
+
+		System.out.println("c is : " + c);
+		System.out.println("c1 is : " + c1);
+
+		c1.setUp(Color.GREEN);
+		c1.setFront(Color.GREEN);
+		c1.setRight(Color.GREEN);
+		c1.setBack(Color.GREEN);
+		c1.setLeft(Color.GREEN);
+		c1.setDown(Color.GREEN);
+		System.out.println("c is : " + c);
+		System.out.println("c1 is : " + c1);
+
+
+
 
 		}
-
 
 }
 
