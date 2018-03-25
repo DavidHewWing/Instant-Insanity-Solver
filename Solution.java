@@ -11,13 +11,6 @@ public Class Solution{
 		}
 
 	}
-	public Solution(Solution other, Cubes c) throw IllegalStateException{
-
-		if(other == null){
-			throw new IllegalStateException
-		}
-
-	}
 
 	public int size(){
 
@@ -59,10 +52,16 @@ public Class Solution{
 				}
 			}
 		}
-
 		return true;
-
 	}
 
+	public boolean isValid(Cube next) throw IllegalStateException{
+
+		if (this.cubes.length == 4){
+			throw new IllegalStateException;
+		}
+
+
+	}
 
 }
