@@ -35,14 +35,15 @@ public class TestCube{
 		System.out.println("c is : " + c);
 		System.out.println("c1 is : " + c1);
 
-		c1.setUp(Color.GREEN);
-		c1.setFront(Color.GREEN);
-		c1.setRight(Color.GREEN);
-		c1.setBack(Color.GREEN);
-		c1.setLeft(Color.GREEN);
-		c1.setDown(Color.GREEN);
+		c1.next();
+		c1.next();
 		System.out.println("c is : " + c);
 		System.out.println("c1 is : " + c1);
+
+		System.out.println("testing exception");
+		c = new Cube(new Color[] {Color.BLUE, Color.GREEN, Color.WHITE, Color.GREEN, Color.BLUE});
+
+		System.out.println(c);
 
 
 
