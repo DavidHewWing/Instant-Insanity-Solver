@@ -1,4 +1,4 @@
-public class Test{
+public class TestCube{
 
 	public static void main(String[] args){
 
@@ -28,8 +28,11 @@ public class Test{
 
 		}
 
+		System.out.println("Testing deep copy");
+
 
 		}
+
 
 }
 
