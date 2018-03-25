@@ -13,7 +13,7 @@ public class TestSolution{
 
 		Solution s1 = new Solution(cubes1);
 
-		System.out.println("size of solution s is : " + s1.size());
+		System.out.println("size of solution s is (should be 4): " + s1.size());
 
 		System.out.println(s1.toString());
 
@@ -29,7 +29,7 @@ public class TestSolution{
 
 		Solution s2= new Solution(cubes2);
 
-		System.out.println("size of solution s is : " + s2.size());
+		System.out.println("size of solution s is (should be 1) : " + s2.size());
 
 		System.out.println(s2.toString());
 
@@ -42,7 +42,7 @@ public class TestSolution{
 
 		Solution s3 = new Solution(s2, c2);
 
-		System.out.println("size of solution s is : " + s3.size());
+		System.out.println("size of solution s is (should be 2): " + s3.size());
 
 		System.out.println(s3.toString());
 
@@ -57,7 +57,7 @@ public class TestSolution{
 
 		Solution s4 = new Solution(cubes3);
 
-		System.out.println("size of solution s is : " + s4.size());
+		System.out.println("size of solution s is (should be 2): " + s4.size());
 
 		System.out.println(s4.toString());
 

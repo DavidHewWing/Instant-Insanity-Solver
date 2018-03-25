@@ -97,8 +97,10 @@ public class Solution{
 
 		Color[] tempLeft = new Color[this.size()];
 		Color[] tempRight = new Color[this.size()];
-		Color[] tempFront = new Color[this.size();
+		Color[] tempFront = new Color[this.size()];
 		Color[] tempBack = new Color[this.size()];
+
+
 
 		for(int i = 0; i < this.cubes.length; i++){
 			tempLeft[i] = this.cubes[i].getLeft();
