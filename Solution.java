@@ -61,7 +61,8 @@ public class Solution{
 
 				}
 
-				this.cubes[other.size()+1] = c.copy();
+
+				this.cubes[other.size()] = c.copy();
 
 
 			}
@@ -156,8 +157,7 @@ public class Solution{
 
 		String temp = "[";
 
-		for(int i=0; i<=this.size()-2; i++){
-			System.out.println(i);
+		for(int i=0; i<this.size()-1; i++){
 
 			temp+= cubes[i].toString() + ", ";
 

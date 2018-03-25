@@ -7,15 +7,73 @@ public class TestSolution{
 		Cube c3 = new Cube(new Color[] {Color.GREEN, Color.WHITE, Color.RED, Color.BLUE, Color.RED, Color.RED});
 		Cube c4 = new Cube(new Color[] {Color.BLUE, Color.RED, Color.GREEN, Color.GREEN, Color.WHITE, Color.WHITE});
 
-		Cube[] cubes = new Cube[] {c1, c2, c3, c4};
+		Cube[] cubes1 = new Cube[] {c1, c2, c3, c4};
 
 
 
-		Solution s = new Solution(cubes);
+		Solution s1 = new Solution(cubes1);
 
-		System.out.println("size of solution s is : " + s.size());
+		System.out.println("size of solution s is : " + s1.size());
 
-		System.out.println(s.toString());
+		System.out.println(s1.toString());
+
+		System.out.println("testing if solution s is valid (should be false) : " + s1.isValid());
+
+
+
+
+
+		System.out.println("new test----");
+
+		Cube[] cubes2 = new Cube[] {c1};
+
+		Solution s2= new Solution(cubes2);
+
+		System.out.println("size of solution s is : " + s2.size());
+
+		System.out.println(s2.toString());
+
+		System.out.println("testing if solution s is valid (should be valid) : " + s2.isValid());
+
+
+
+
+		System.out.println("new test----");
+
+		Solution s3 = new Solution(s2, c2);
+
+		System.out.println("size of solution s is : " + s3.size());
+
+		System.out.println(s3.toString());
+
+		System.out.println("testing if solution s is valid (should be false) : " + s3.isValid());
+
+
+
+
+		System.out.println("new test----");
+
+		Cube[] cubes3 = new Cube[] {c2, c4};
+
+		Solution s4 = new Solution(cubes3);
+
+		System.out.println("size of solution s is : " + s4.size());
+
+		System.out.println(s4.toString());
+
+		System.out.println("testing if solution s is valid (should be true) : " + s4.isValid());
+
+
+
+
+
+
+
+		
+
+
+
+
 
 
 
