@@ -26,8 +26,6 @@ public class Solution{
 		}
 
 	}
-<<<<<<< HEAD
-=======
 
 
 
@@ -72,7 +70,6 @@ public class Solution{
 		}
 
 	}
->>>>>>> d95c9e78ac22a8a51c6fb58149977310fc6e8dd1
 
 	public int size(){
 
@@ -158,25 +155,13 @@ public class Solution{
 			}
 
 		}
-<<<<<<< HEAD
-=======
 
 
 		valid = true;
->>>>>>> d95c9e78ac22a8a51c6fb58149977310fc6e8dd1
 		return true;
-	}
-
-<<<<<<< HEAD
-	public boolean isValid(Cube next) throw IllegalStateException{
-
-		if (this.cubes.length == 4){
-			throw new IllegalStateException;
-		}
-
 
 	}
-=======
+
 	public boolean isValid(Cube next){
 
 		//precondiiton: called on a valid solution
@@ -226,6 +211,5 @@ public class Solution{
 		isValidCallCounter=0;
 	}
 
->>>>>>> d95c9e78ac22a8a51c6fb58149977310fc6e8dd1
 
 }
