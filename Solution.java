@@ -115,9 +115,9 @@ public class Solution{
 			tempLeft[i] = this.cubes[i].getLeft();
 		}
 
-		for(int i = 0; i < tempLeft.length; i++){
+		for(int i = 0; i < tempFront.length; i++){
 
-			System.out.println("Printing templeft : " + tempLeft[i]);
+			System.out.println("Printing tempfront : " + tempFront[i]);
 
 		}
 
@@ -127,17 +127,20 @@ public class Solution{
 
 		}
 
-		for(int i = 0; i < tempFront.length; i++){
-
-			System.out.println("Printing tempfront : " + tempFront[i]);
-
-		}
-
 		for(int i = 0; i < tempBack.length; i++){
 
 			System.out.println("Printing tempBack : " + tempBack[i]);
 
 		}
+
+		for(int i = 0; i < tempLeft.length; i++){
+
+			System.out.println("Printing templeft : " + tempLeft[i]);
+
+		}
+
+		
+
 
 		//check the sides
 		for(int j = 0; j < this.size(); j++){
