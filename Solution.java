@@ -102,16 +102,24 @@ public class Solution{
 
 
 
-		for(int i = 0; i < this.cubes.length; i++){
+		for(int i = 0; i < this.size(); i++){
 			tempLeft[i] = this.cubes[i].getLeft();
 			tempRight[i] = this.cubes[i].getRight();
 			tempFront[i] = this.cubes[i].getFront();
 			tempBack[i] = this.cubes[i].getBack();
 		}
 
+		for(int i = 0; i < this.size(); i++){
+
+			System.out.println(tempLeft[i]);
+
+		}
+
 		//check the sides
-		for(int j = 0; j < this.cubes.length; j++){
-			for(int k = 0; k < this.cubes.length; k++){
+		for(int j = 0; j < this.size(); j++){
+			for(int k = 1; k < this.size(); k++){
+				System.out.println("left j : " + tempLeft[j]);
+				System.out.println("left k : " + tempLeft[k]);
 				if(tempLeft[j] == tempLeft[k]){
 					valid=false;
 					return false;

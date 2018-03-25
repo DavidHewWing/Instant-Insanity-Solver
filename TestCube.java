@@ -6,6 +6,13 @@ public class TestCube{
 
 		c = new Cube(new Color[] {Color.BLUE, Color.GREEN, Color.WHITE, Color.GREEN, Color.BLUE, Color.RED});
 
+		System.out.println("blue : " + c.getUp());
+		System.out.println("green : " + c.getFront());
+		System.out.println("white : " + c.getRight());
+		System.out.println("green : " + c.getBack());
+		System.out.println("blue : " + c.getLeft());
+		System.out.println("red : " + c.getDown());
+
 		c.reset();
 
 		while (c.hasNext()){
