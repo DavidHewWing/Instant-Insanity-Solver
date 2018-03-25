@@ -103,17 +103,22 @@ public class Solution{
 
 
 		for(int i = 0; i < this.size(); i++){
+			
+			/* error check
 			System.out.println("i is: " + i);
 			System.out.println("front is: " + this.cubes[i].getFront());
 			System.out.println("right is : " + this.cubes[i].getRight());
 			System.out.println("back is : " + this.cubes[i].getBack());
 			System.out.println("left is : " + this.cubes[i].getLeft());
+			*/ 
 
 			tempFront[i] = this.cubes[i].getFront();
 			tempRight[i] = this.cubes[i].getRight();
 			tempBack[i] = this.cubes[i].getBack();
 			tempLeft[i] = this.cubes[i].getLeft();
 		}
+
+		/* error checks
 
 		for(int i = 0; i < tempFront.length; i++){
 
@@ -139,29 +144,18 @@ public class Solution{
 
 		}
 
-		
-
+		*/
 
 		//check the sides
-		for(int j = 0; j < this.size(); j++){
-			for(int k = 1; k < this.size(); k++){
-				System.out.println("left j : " + tempLeft[j]);
-				System.out.println("left k : " + tempLeft[k]);
-				if(tempLeft[j] == tempLeft[k]){
-					valid=false;
-					return false;
-				}else if(tempRight[j] == tempRight[k]){
-					valid=false;
-					return false;
-				}else if(tempFront[j] == tempFront[k]){
-					valid=false;
-					return false;
-				}else if(tempBack[j] == tempBack[k]){
-					valid=false;
-					return false;
-				}
+		for(int i = 0; i < this.size()-1; i++){
+
+			if (tempFront[i] == tempFront[i+1] || tempRight[i] == tempRight[i+1] || tempBack[i] == tempBack[i+1] || tempLeft[i] == tempLeft[i+1]){
+
+				return false;
 			}
+
 		}
+
 
 		valid = true;
 		return true;
