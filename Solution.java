@@ -103,6 +103,12 @@ public class Solution{
 
 
 		for(int i = 0; i < this.size(); i++){
+			System.out.println("i is: " + i);
+			System.out.println(this.cubes[i].getBack());
+			System.out.println(this.cubes[i].getFront());
+			System.out.println(this.cubes[i].getRight());
+			System.out.println(this.cubes[i].getLeft());
+
 			tempLeft[i] = this.cubes[i].getLeft();
 			tempRight[i] = this.cubes[i].getRight();
 			tempFront[i] = this.cubes[i].getFront();
@@ -111,7 +117,7 @@ public class Solution{
 
 		for(int i = 0; i < this.size(); i++){
 
-			System.out.println(tempLeft[i]);
+			System.out.println("Printing templeft : " + tempLeft[i]);
 
 		}
 
