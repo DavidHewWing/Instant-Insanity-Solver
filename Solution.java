@@ -104,20 +104,38 @@ public class Solution{
 
 		for(int i = 0; i < this.size(); i++){
 			System.out.println("i is: " + i);
-			System.out.println(this.cubes[i].getFront());
-			System.out.println(this.cubes[i].getRight());
-			System.out.println(this.cubes[i].getBack());
-			System.out.println(this.cubes[i].getLeft());
+			System.out.println("front is: " + this.cubes[i].getFront());
+			System.out.println("right is : " + this.cubes[i].getRight());
+			System.out.println("back is : " + this.cubes[i].getBack());
+			System.out.println("left is : " + this.cubes[i].getLeft());
 
-			tempLeft[i] = this.cubes[i].getLeft();
-			tempRight[i] = this.cubes[i].getRight();
 			tempFront[i] = this.cubes[i].getFront();
+			tempRight[i] = this.cubes[i].getRight();
 			tempBack[i] = this.cubes[i].getBack();
+			tempLeft[i] = this.cubes[i].getLeft();
 		}
 
-		for(int i = 0; i < this.size(); i++){
+		for(int i = 0; i < tempLeft.length; i++){
 
 			System.out.println("Printing templeft : " + tempLeft[i]);
+
+		}
+
+		for(int i = 0; i < tempRight.length; i++){
+
+			System.out.println("Printing tempright : " + tempRight[i]);
+
+		}
+
+		for(int i = 0; i < tempFront.length; i++){
+
+			System.out.println("Printing tempfront : " + tempFront[i]);
+
+		}
+
+		for(int i = 0; i < tempBack.length; i++){
+
+			System.out.println("Printing tempBack : " + tempBack[i]);
 
 		}
 
