@@ -16,6 +16,13 @@ public class TestSolution{
 		System.out.println("size of solution s is (should be 4): " + s1.size());
 		System.out.println(s1.toString());
 		System.out.println("testing if solution s is valid (should be false) : " + s1.isValid());
+		System.out.println("----Testing getCube----");
+		System.out.println(s1.getCube(0));
+		System.out.println(s1.getCube(1));
+		System.out.println(s1.getCube(2));
+		System.out.println(s1.getCube(3));
+		//System.out.println(s1.getCube(4)); should throw IllegalStateException
+
 
 		System.out.println("\nnew test---- [c1,c2,c3]");
 		Cube[] cubes2 = new Cube[] {c1, c2, c3};
@@ -149,6 +156,7 @@ public class TestSolution{
 		System.out.println(s18.toString());
 		System.out.println("testing if solution s is valid (should be false) : " + s18.isValid());
 		System.out.println("testing ISVALID(NEXT) (should be false) [null, null] : " + s18.isValid(null));
+		// System.out.println(s18.getCube(0)); should throw IllegalStateException
 		System.out.println("TESTING USE OF CONSTRUCTOR");
 		Solution s19 = new Solution(s18, c1);
 		System.out.println("size of solution s is (should be 1): " + s19.size());
@@ -157,6 +165,7 @@ public class TestSolution{
 		System.out.println("testing ISVALID(NEXT) (should be TRUE) [c1, c3] : " + s19.isValid(c3));
 		System.out.println("testing ISVALID(NEXT) (should be FALSE) [c1, c2] : " + s19.isValid(c2));
 		System.out.println("testing ISVALID(NEXT) (should be false) [c1, null] : " + s19.isValid(null));
+
 
 
 

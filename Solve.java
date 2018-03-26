@@ -45,6 +45,26 @@ public class Solve{
 	}
 
 	public static void main (String args[]){
+		StudentInfo.display();
+
+		long start, stop;
+
+		/* System.out.println("generateAndTest:");
+		start = System.currentTimeMillis(); //could also use nanoTime
+
+		generateAndTest();
+
+		stop = System.currentTimeMillis();
+		System.out.println("Elapsed time: " + (stop-start) + "milliseconds");
+		*/
+
+		System.out.println("breadthFirstSearch:");
+		start = System.currentTimeMillis();
+
 		breadthFirstSearch();
+
+		stop = System.currentTimeMillis();
+		System.out.println("Elapsed time: " + (stop-start) + "milliseconds");
+
 	}
 }

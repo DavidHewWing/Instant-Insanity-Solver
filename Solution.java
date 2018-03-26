@@ -98,7 +98,7 @@ public class Solution{
 			throw new IllegalStateException("There are no cubes in this solution");
 		}
 
-		if (0>pos || pos> cubes.length){
+		if (0>pos || pos> cubes.length-1){
 
 			throw new IllegalStateException("Value for pos is not valid");
 
@@ -196,7 +196,7 @@ public class Solution{
 	public boolean isValid(Cube next){
 
 		if (this.cubes == null){
-			
+
 			return false;
 		}
 
