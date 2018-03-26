@@ -196,8 +196,7 @@ public class Solution{
 	public boolean isValid(Cube next){
 
 		if (this.cubes == null){
-
-
+			
 			return false;
 		}
 
