@@ -20,12 +20,17 @@ public class Solve{
 			Solution tempSol = new Solution(new Cube[] {cubey});
 			open.enqueue(tempSol);
 		}
-
+		int counter = 0;
 		while(!(open.isEmpty())){
-
+			for(int k = 1; k < 4; k++ ){
+				cubes[k].reset();
+			}
 			Solution current = open.dequeue();
-			for(int i = 1; i < 4; i++){
+			for(int i = 1; i < cubes.length; i++){
+				counter = 0;
 				for(int j = 0; j < 24; j++){
+					counter++;
+					System.out.println(counter);
 					cubes[i].next();
 					Cube newCube = new Cube(new Color[] {cubes[i].getUp(), cubes[i].getFront(), cubes[i].getRight(), cubes[i].getBack(), cubes[i].getLeft(), cubes[i].getDown()});
 					if(current.isValid(newCube)){
