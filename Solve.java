@@ -7,10 +7,17 @@ public class Solve{
 	private static Cube[] cubes = {firstCube, secondCube, thirdCube, fourthCube};
 
 
-	public static void breadthFirstSearch(){
+	public static Queue<Solution> generateAndTest(){
+
+
+
+	}
+
+	public static Queue<Solution> breadthFirstSearch(){
 
 		Queue<Solution> open = new LinkedQueue<Solution>();
 		Queue<Solution> solution = new LinkedQueue<Solution>();
+
 
 
 		while (firstCube.hasNext()){
@@ -24,6 +31,7 @@ public class Solve{
 		while(!(open.isEmpty())){
 
 			Solution current = open.dequeue();
+			current.resetNumberOfCalls();
 			for(int i = 1; i < 4; i++){
 				for(int j = 0; j < 24; j++){
 					cubes[i].next();
@@ -41,10 +49,13 @@ public class Solve{
 
 			}
 
-		}	
+		}
+		System.out.println("Number of Calls: " + solution.front.getNumberOfCalls());
+
+		return solution;	
 	}
 
 	public static void main (String args[]){
-		breadthFirstSearch();
+	
 	}
 }
