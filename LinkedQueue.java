@@ -15,7 +15,7 @@ public class LinkedQueue<D> implements Queue<D> {
     public LinkedQueue(){
         front = rear = null;
     }
-
+ 
     public  boolean isEmpty(){
        return front == null ;       
     }
