@@ -53,7 +53,7 @@ public class Solution{
 
 		else{
 
-			if (other.size()==1000){
+			if (other.size()==4){
 
 				throw new IllegalStateException("Size of array of cubes is too large to add another cube");
 

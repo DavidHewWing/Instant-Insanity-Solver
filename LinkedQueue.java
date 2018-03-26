@@ -1,75 +1,54 @@
-public class LinkedQueue<D> implements Queue<D> {
+public class LinkedQueue<E> implements Queue<E> {
 
     private static class Elem<T> {
+
         private T value;
         private Elem<T> next;
+
         private Elem(T value, Elem<T> next) {
             this.value = value;
             this.next = next;
         }
     }
 
-    private Elem<D> front;
-    private Elem<D> rear;
+    private Elem<E> front;
+    private Elem<E> rear;
+    private int size;
 
-    public LinkedQueue(){
-        front = rear = null;
-    }
- 
-    public  boolean isEmpty(){
-       return front == null ;       
+    public LinkedQueue() {
+        size = 0;
     }
 
-    public  void enqueue(D newElement){
+    public int size(){
+        return size;
+    }
 
-        if(newElement == null) {
-            throw new NullPointerException("no null object in my queue !");
-        }
-        
-        Elem<D> newElem;
-        newElem = new Elem<D>(newElement,null);
-        if(isEmpty()) {
-            front = newElem;
-            rear = newElem;
+    public void enqueue(E value) {
+        Elem<E> newElem;
+        newElem = new Elem<E>(value, null );
+
+        if (rear == null) {
+            front = rear = newElem;
         } else {
             rear.next = newElem;
             rear = newElem;
         }
+        size++;
     }
 
-
-    public D dequeue() {
-
-        if(isEmpty()) {
-            throw new IllegalStateException("Dequeue method called on an empty queue");
-        }
-
-        D returnedValue;
-        returnedValue = front.value;
-
-        if(front.next == null) {   
+    public E dequeue() {
+        E result = front.value;
+        if (front != null & front.next == null) {
             front = rear = null;
         } else {
             front = front.next;
         }
-        return returnedValue;
+        size--;
+        return result;
     }
 
-    public String toString() {
-
-        StringBuffer returnedValue = new StringBuffer("[");
-
-        if(!isEmpty()) {
-            Elem<D> cursor = front;
-            returnedValue.append(cursor.value);
-            while(cursor.next != null) {
-                cursor = cursor.next;
-                returnedValue.append(", "  + cursor.value);
-            }
-        }
-        
-        returnedValue.append("]");
-        return returnedValue.toString();
-        
+    public boolean isEmpty() {
+        return front == null;
     }
+
 }
