@@ -7,12 +7,6 @@ public class Solve{
 	private static Cube[] cubes = {firstCube, secondCube, thirdCube, fourthCube};
 
 
-	public static Queue<Solution> generateAndTest(){
-
-
-
-	}
-
 	public static Queue<Solution> breadthFirstSearch(){
 
 		Queue<Solution> open = new LinkedQueue<Solution>();
@@ -33,24 +27,23 @@ public class Solve{
 				cubes[k].reset();
 			}
 			Solution current = open.dequeue();
-<<<<<<< HEAD
-			for(int i = 1; i < cubes.length; i++){
-				counter = 0;
-=======
 			current.resetNumberOfCalls();
 			for(int i = 1; i < 4; i++){
->>>>>>> 3fe23b0cd9f770e576c1f36e61cc819126ec9eda
+				counter = 0;
 				for(int j = 0; j < 24; j++){
 					counter++;
-					System.out.println(counter);
 					cubes[i].next();
-					Cube newCube = new Cube(new Color[] {cubes[i].getUp(), cubes[i].getFront(), cubes[i].getRight(), cubes[i].getBack(), cubes[i].getLeft(), cubes[i].getDown()});
-					if(current.isValid(newCube)){
-						if(current.size() == 4){
+					Cube newCube = cubes[i].copy();
+					Solution newSol = new Solution(current, newCube);
+					if(newSol.isValid()){
+						if(current.size() == 5){
+							System.out.println("sol found");
 							solution.enqueue(current);
+							System.out.println("Number of Calls: " + current.getNumberOfCalls());
 						}else{
 							Solution sol = new Solution(current, newCube);
 							open.enqueue(sol);
+					
 						}
 					}
 
@@ -59,15 +52,15 @@ public class Solve{
 			}
 
 		}
-		System.out.println("Number of Calls: " + solution.front.getNumberOfCalls());
+
+		
 
 		return solution;	
-	}
+
+		}
 
 	public static void main (String args[]){
-<<<<<<< HEAD
-	
-=======
+
 		StudentInfo.display();
 
 		long start, stop;
@@ -89,6 +82,5 @@ public class Solve{
 		stop = System.currentTimeMillis();
 		System.out.println("Elapsed time: " + (stop-start) + "milliseconds");
 
->>>>>>> 8773143678aa570fb17c956d26e646565acd0263
 	}
 }

@@ -2,7 +2,7 @@ public class Solution{
 
 	private Cube[] cubes;
 	private boolean valid;
-	private int isValidCallCounter;
+	private static int isValidCallCounter;
 
 
 	public Solution(Cube[] cubes) throws IllegalStateException{
@@ -53,7 +53,7 @@ public class Solution{
 
 		else{
 
-			if (other.size()==4){
+			if (other.size()==1000){
 
 				throw new IllegalStateException("Size of array of cubes is too large to add another cube");
 
