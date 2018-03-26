@@ -7,33 +7,42 @@ public class Solution{
 
 	public Solution(Cube[] cubes) throws IllegalStateException{
 
-		if (0>cubes.length || cubes.length>4){
+		if (cubes==null){
+
+			this.cubes = null;
+		}
+
+		else if (0>cubes.length || cubes.length>4){
 
 			throw new IllegalStateException("Size of array cubes is invalid");
 		}
 
-		for (int i = 0; i < cubes.length; i++){
-			if (cubes[i] == null){
+		else{
 
-				throw new IllegalStateException("Cube cannot be null");
+			for (int i = 0; i < cubes.length; i++){
+				if (cubes[i] == null){
+
+					throw new IllegalStateException("Cube cannot be null");
+				}
 			}
-		}
 
-		
-		this.cubes = new Cube[cubes.length];
-		for(int i = 0; i < cubes.length; i++){
-			this.cubes[i] = cubes[i].copy();
+			
+			this.cubes = new Cube[cubes.length];
+			for(int i = 0; i < cubes.length; i++){
+				this.cubes[i] = cubes[i].copy();
+			}
+
 		}
 
 	}
 
 
 
-	public Solution(Solution other, Cube c) throws IllegalStateException{
+	public Solution(Solution other, Cube c) throws IllegalStateException, NullPointerException{
 
 		if (c==null){
 
-			throw new IllegalStateException("Null is not a valid value for cube");
+			throw new NullPointerException("Null is not a valid value for cube");
 		}
 
 		if(other == null){
@@ -73,17 +82,39 @@ public class Solution{
 
 	public int size(){
 
+		if (this.cubes == null){
+
+			return 0;
+		}
+
 		return cubes.length;
 
 	}
 
-	public Cube getCube(int pos){
+	public Cube getCube(int pos) throws IllegalStateException{
+
+		if (this.cubes == null){
+
+			throw new IllegalStateException("There are no cubes in this solution");
+		}
+
+		if (0>pos || pos> cubes.length){
+
+			throw new IllegalStateException("Value for pos is not valid");
+
+		}
 
 		return cubes[pos];
 
 	}
 
 	public boolean isValid(){
+
+		if (this.cubes == null){
+
+			return false;
+		}
+
 
 		isValidCallCounter++;
 
@@ -164,6 +195,18 @@ public class Solution{
 
 	public boolean isValid(Cube next){
 
+		if (this.cubes == null){
+
+
+			return false;
+		}
+
+		if (next == null){
+
+
+			return false;
+		}
+
 		//precondiiton: called on a valid solution
 
 		if (valid==false){
@@ -185,6 +228,12 @@ public class Solution{
 
 
 	public String toString(){
+
+		if (this.cubes == null){
+
+			return "There are no cubes in this solution";
+		}
+
 
 		String temp = "[";
 

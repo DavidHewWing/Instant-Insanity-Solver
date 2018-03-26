@@ -28,7 +28,8 @@ public class TestCube{
 
 		}
 
-		System.out.println("Testing deep copy");
+
+
 
 
 		}
